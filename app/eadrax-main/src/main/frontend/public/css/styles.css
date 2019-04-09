@@ -1,0 +1,36 @@
+.w3-input {
+    display: inline-block;
+}
+
+.w3-row-padding>.w3-col {
+    padding: 5px 10px;
+}
+
+.center {
+    text-align: center
+}
+
+.w3-section-8,
+.w3-code-8 {
+    margin-top: 8px!important;
+    margin-bottom: 8px!important;
+}
+
+.red {
+    color: red;
+}
+
+.vue-input-tag-wrapper .input-tag {
+    background-color: #607d8b !important;
+    color: white !important;
+    border: 1px solid #5c7685 !important;
+}
+
+.input-tag .remove {
+    color: white !important;
+}
+
+.necessary{
+    color:red;
+    margin-left: 3px;
+}

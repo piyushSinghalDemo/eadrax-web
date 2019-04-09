@@ -1,0 +1,101 @@
+{
+  "topNavigation": {
+    "home": "Eadrax - Projekt Staffing",
+    "login": "Anmelden",
+    "find": "Finden",
+    "profile": "Account",
+    "projects": "Projekte",
+    "register": "Registrieren",
+    "logout": "Abmelden"
+  },
+  "searchAndFind": {
+    "lblFindCrewMember": "Finde Crewmitglieder",
+    "lblFindSkipperMember": "Finde Skipper",
+    "lblName": "Name oder Titel",
+    "lblHourlyRate": "Stundensatz Max",
+    "lblAvgRating": "Bewertung (Ø) Min",
+    "lblResult": "Ergebnisse",
+    "lblProjects": "Projekte (#) Min"
+  },
+  "projects": {
+    "lblProjectSummary": "Projektzusammenfassung",
+    "lblOverview": "Übersicht",
+    "lblFinishedProjects": "Anzahl fertiggestellter Projekte",
+    "lblListOfProjects": "Liste von Projekten",
+    "btEdit": "Bearbeiten",
+    "btNew": "Neu",
+    "btDelete": "Löschen",
+    "btSave": "Speichern",
+    "btCancel": "Abbrechen",
+    "lblName": "Name",
+    "lblStarted": "Beginn",
+    "lblEnded": "Ende",
+    "lblSkipper": "Skipper",
+    "lblCrew": "Crew",
+    "lblRating": "Bewertung",
+    "lblCustomer": "Kunde",
+    "msgProfileSave": "Daten erfolgreich gespeichert.",
+    "msgDelete": "Projekt erfolgreich gelöscht."
+  },
+  "profile": {
+    "lblContainerHeading": "Persönliche Informationen",
+    "lblFirstName": "Vorname",
+    "lblLastName": "Nachname",
+    "lblTitle": "Titel / Job-Level",
+    "lblEmail": "E-Mail",
+    "lblLocation": "Standort",
+    "skillsHeading": "Profil und Kompetenzen",
+    "lblOverview": "Übersicht",
+    "lblTop3Skills": "Top 3 Kompetenzen",
+    "lblListOfSkill": "Liste von Kompetenzen",
+    "lblPaymentHeading": "Bezahlung und Verfügbarkeit",
+    "lblId": "ID",
+    "lblHourlyRate": "Stundensatz",
+    "lblCurrency": "Währung",
+    "lblAvailability": "Verfügbarkeit",
+    "btSubmit": "Speichern",
+    "lblImageException": "Fehler",
+    "msgProfileSave": "Daten erfolgreich gespeichert"
+  },
+  "login": {
+    "lblEMail": "E-Mail",
+    "lblPassword": "Passwort",
+    "lblPasswordForgotten": "Passwort vergessen?",
+    "msgAuthError": "Fehler bei der Authentifizierung",
+    "btLogin": "Anmelden"
+  },
+  "logout": {
+    "lblGoodbyeMsg": "Vielen Dank für die Nutzung und bis zum nächsten Mal!"
+  },
+  "home": {
+    "lblPleaseAuth": "Bitte melden Sie sich zunächst am System an.",
+    "lblAuthSucceeded": "Sie haben sich erfolgreich angemeldet."
+  },
+  "register": {
+    "btRegisterUser": "Account erstellen",
+    "lblIntro": "Bitte geben Sie die folgenden Informationen ein um sich zu registrieren.",
+    "lblRole": "Wofür möchtest Du Eadrax nutzen?",
+    "lblRoleDev": "Ich bin Entwickler, IT-Architekt, Anforderungsmanager, etc.",
+    "lblRoleCustomer": "Ich bin Kunde und möchte Software entwickeln lassen.",
+    "lblEMail": "E-Mail",
+    "msgCheckForm": "Ihre Eingaben sind nicht korrekt - bitte prüfen Sie die einzelnen Felder!",
+    "msgFail400": "Der Account konnte nicht erstellt werden. Bitte wählen Sie eine andere E-Mail-Adresse.",
+    "msgCreated": "Account wurde erstellt. Bitte prüfen Sie Ihre Mails.."
+  },
+  "resetPassword": {
+    "lblInvalidToken": "Der angegebene Link ist nicht (mehr) gültig. Bitte wenden Sie sich an den Support.",
+    "lblWelcomeAfterRegister": "Vielen Dank für Ihre Registrierung bei Eadrax! Bitte wählen Sie abschließend ein Passwort für Ihren Account:",
+    "lblPassword": "Neues Passwort",
+    "lblPasswordConfirm": "Bestätigung",
+    "msgPasswordsDifferent": "Die eingebenen Passwörter stimmen nicht überein!",
+    "msgPasswordChanged": "Ihr Passwort wurde erfolgreich gesetzt! Sie können sich jetzt mit dem neuen Passwort anmelden.",
+    "btResetUser": "Passwort setzen"
+  },
+  "forgotPassword": {
+    "lblIntroduction": "Bitte geben Sie die E-Mail-Adresse ein, die mit Ihrem Account bei Eadrax verknüpft ist und wir senden Ihnen anschließend eine E-Mail zum Zurücksetzen des Passworts.",
+    "lblOutro": "Wir haben eine E-Mail mit weiteren Anweisungen an {0} geschickt.",
+    "lblEMail": "E-Mail",
+    "msgCheckForm": "Ihre Eingaben sind nicht korrekt - bitte prüfen Sie die einzelnen Felder!",
+    "btResetPassword": "Sende E-Mail"
+  }
+}

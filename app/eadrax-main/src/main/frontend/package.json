@@ -1,0 +1,40 @@
+{
+  "name": "eadrax-main",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "build:test": "vue-cli-service build --mode test"
+  },
+  "dependencies": {
+    "axios": "0.18.0",
+    "better-vue-input-tag": "1.1.0",
+    "flag-icon-css": "3.2.1",
+    "i18n-iso-countries": "3.7.8",
+    "vue-country-flag": "1.0.1",
+    "lodash": "4.17.11",
+    "moment": "2.23.0",
+    "vee-validate": "2.1.5",
+    "vue": "2.5.22",
+    "vue-cookies": "1.5.12",
+    "vue-good-table": "2.16.0",
+    "vue-router": "3.0.2",
+    "vue-slider-component": "2.8.5",
+    "vue-star-rating": "1.6.1",
+    "vue-toasted": "1.1.26",
+    "vue2-filters": "0.4.1",
+    "vuejs-auto-complete": "0.9.0",
+    "vuejs-datepicker": "1.5.4",
+    "vuex": "3.0.1"
+  },
+  "devDependencies": {
+    "vue": "2.5.22",
+    "@vue/cli-plugin-babel": "^3.0.0",
+    "@vue/cli-plugin-eslint": "^3.0.0",
+    "@vue/cli-service": "^3.0.0",
+    "@vue/eslint-config-prettier": "^3.0.0",
+    "vue-template-compiler": "2.5.22"
+  }
+}

@@ -1,0 +1,12 @@
+# see also for syntax: https://docs.docker.com/engine/reference/builder/#dockerignore-file
+# and why we do it: https://stackoverflow.com/questions/26600769/build-context-for-docker-image-very-large
+**/*.class
+**/*.jar
+**/*.deb
+.git
+.gradle
+.idea
+build
+!build/libs/*.jar
+out
+src

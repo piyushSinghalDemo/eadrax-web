@@ -1,0 +1,150 @@
+buildscript {
+    ext {
+        springBootVersion = "2.1.2.RELEASE"
+        springVersion = "5.1.4.RELEASE"
+        lombokVersion = "1.18.4"
+        mapstructVersion = "1.2.0.Final"
+        jgivenVersion = "0.17.0"
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("io.spring.gradle:dependency-management-plugin:1.0.6.RELEASE")
+        classpath("de.thetaphi:forbiddenapis:2.5")
+        classpath("net.ltgt.gradle:gradle-apt-plugin:0.18")
+        classpath("com.tngtech.jgiven:jgiven-gradle-plugin:${jgivenVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'net.ltgt.apt'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'de.thetaphi.forbiddenapis'
+apply plugin: 'com.tngtech.jgiven.gradle-plugin'
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Finchley.SR2'
+    }
+}
+
+allprojects {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+}
+
+group 'com.symproject.sirius_tau.eadrax'
+version = '1.0.0-SNAPSHOT'
+jar {
+    baseName = 'eadrax-main'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir "${buildDir.absolutePath}/generated"
+        }
+    }
+}
+
+gradle.ext.generatedQueriesDir = "${buildDir.absolutePath}/generated/source/apt"
+/*
+ * See also: https://stackoverflow.com/questions/41219903/endpostable-already-set-when-adding-sourceset
+ * This is a workaround to delete the file that will be created by the annotation processor if it already exists.
+ * There is a known bug in the Java compiler and JDK 8 which should be fixed at JDK 9.
+ * http://bugs.java.com/bugdatabase/view_bug.do?bug_id=8067747 <-- Master report
+ * http://bugs.java.com/bugdatabase/view_bug.do?bug_id=8146348 <-- duplicates master report
+ */
+if ( file( gradle.ext.generatedQueriesDir ).exists() ) {
+    FileCollection collection = files { file( gradle.ext.generatedQueriesDir ).listFiles() }
+    collection.each { delete it }
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+forbiddenApis {
+    bundledSignatures = [ 'jdk-unsafe', 'jdk-deprecated', 'jdk-non-portable' ]
+    signaturesFiles = files('../../config/forbidden-apis/signatures.txt')
+    ignoreFailures = false
+}
+
+configurations {
+    compile.exclude module: "spring-boot-starter-tomcat"
+}
+
+dependencies {
+    compile("org.apache.commons:commons-lang3:3.8.1")
+    compile("commons-io:commons-io:2.6")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("com.h2database:h2")
+    compile("org.springframework.boot:spring-boot-starter-jetty")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework.boot:spring-boot-starter-security")
+    compile("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:${springBootVersion}")
+    compile("javax.ws.rs:javax.ws.rs-api:2.1.1")
+
+    compile("org.springframework.boot:spring-boot-starter-mail")
+    compile project(":mail-commons")
+    compile("org.springframework:spring-context-support:${springVersion}")
+    compile("org.freemarker:freemarker:2.3.28")
+
+    // must be this version, see: https://github.com/rzwitserloot/lombok/issues/1716
+    compile("org.projectlombok:lombok:${lombokVersion}")
+    compile("org.mapstruct:mapstruct-jdk8:${mapstructVersion}")
+    compile("org.mapstruct:mapstruct-processor:${mapstructVersion}")
+    annotationProcessor("org.projectlombok:lombok:${lombokVersion}", "org.mapstruct:mapstruct-processor:${mapstructVersion}")
+    testAnnotationProcessor("org.projectlombok:lombok:${lombokVersion}", "org.mapstruct:mapstruct-processor:${mapstructVersion}")
+
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("io.rest-assured:rest-assured:3.1.0")
+    testCompile("junit:junit:4.12")
+    testCompile("com.tngtech.jgiven:jgiven-junit:${jgivenVersion}")
+    testCompile("com.tngtech.jgiven:jgiven-spring:${jgivenVersion}")
+    testCompile("org.assertj:assertj-core:3.11.1")
+    testCompile("org.seleniumhq.selenium:selenium-java:3.141.59")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+// copy frontend to resources folder for creating uber-jar
+processResources {
+    from('src/main/frontend/dist') {
+        into 'static'
+    }
+}
+processResources.dependsOn('frontend:build')
+
+// copy frontend to Idea-out-folder for frontend test
+task copyFrontendToIdeaOut {
+    copy {
+        from 'src/main/frontend/dist'
+        into 'out/production/resources/static'
+    }
+}
+copyFrontendToIdeaOut.dependsOn('frontend:build')
+
+test {
+    systemProperties = System.properties
+    testLogging {
+        exceptionFormat = 'full'
+    }
+    afterTest { desc, result ->
+        logger.quiet "Executing test ${desc.name} [${desc.className}] with result: ${result.resultType}"
+    }
+}
+test.finalizedBy jgivenTestReport

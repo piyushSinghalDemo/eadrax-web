@@ -1,0 +1,111 @@
+{
+    "topNavigation": {
+        "home": "Eadrax - Project Staffing",
+        "login": "Login",
+        "find": "Find",
+        "profile": "Profile",
+        "projects": "Projects",
+        "register": "Register",
+        "logout": "Logout"
+    },
+    "searchAndFind": {
+        "lblFindCrewMember": "Find Crew Members",
+        "lblFindSkipperMember": "Find Skippers",
+        "lblName": "Name or Title",
+        "lblSearch": "Search",
+        "lblHourlyRate": "Hourly Rate Max",
+        "lblAvgRating": "Average Rating Min",
+        "lblResult": "Results",
+        "lblProjects": "No. Projects Min",
+        "lblSkill": "Skills"
+    },
+    "projects": {
+        "lblProjectSummary": "Project Summary",
+        "lblOverview": "Overview",
+        "lblFinishedProjects": "Total number of finished projects",
+        "lblListOfProjects": "List of projects",
+        "btEdit": "Edit",
+        "btNew": "New",
+        "btDelete": "Delete",
+        "btSave": "Save",
+        "btCancel": "Cancel",
+        "lblName": "Name",
+        "lblStarted": "Started",
+        "lblEnded": "Ended",
+        "lblSkipper": "Skipper",
+        "lblCrew": "Crew",
+        "lblRating": "Rating",
+        "lblCustomer": "Customer",
+        "msgProfileSave": "Data saved successfully",
+        "msgDelete": "Project Deleted successfully"
+    },
+    "profile": {
+        "lblContainerHeading": "Personal Information",
+        "lblFirstName": "First Name",
+        "lblLastName": "Last Name",
+        "lblTitle": "Title / Level",
+        "lblEmail": "E-Mail",
+        "lblLocation": "Location",
+        "lblPostalAddress":"Postal Address",
+        "skillsHeading": "Profile and Skills",
+        "lblCompanyProfile":"Company Profile",
+        "lblName":"Name",
+        "lblWebsite":"Website",
+        "lblOverview": "Overview",
+        "lblTop3Skills": "Top 3 Skills",
+        "lblListOfSkill": "List of skills",
+        "lblTaxNumberType": "Tax Number Type",
+        "lblPaymentHeading": "Payment and Availability",
+        "lblId": "ID",
+        "lblHourlyRate": "Hourly Rate($)",
+        "lblCurrency": "Currency",
+        "lblAvailability": "Availability",
+        "lblWeeklyTime": "Weekly Time",
+        "btSubmit": "Submit",
+        "lblImageException": "Failure",
+        "msgProfileSave": "Data saved successfully",
+        "lblTaxNumber": "Tax Number"
+    },
+    "login": {
+        "lblEMail": "E-Mail",
+        "lblPassword": "Password",
+        "lblPasswordForgotten": "Forgot password?",
+        "msgAuthError": "Error while authenticating",
+        "btLogin": "Login"
+    },
+    "logout": {
+        "lblGoodbyeMsg": "Thanks for using and see you soon!"
+    },
+    "home": {
+        "lblPleaseAuth": "Please login into the system first.",
+        "lblAuthSucceeded": "You have been authenticated successfully."
+    },
+    "register": {
+        "btRegisterUser": "Create Account",
+        "lblIntro": "Please enter the following information for registration.",
+        "lblRole": "What will you use Eadrax for ?",
+        "lblRoleSkipper": "I'm a \"Skipper\" that needs to extend project capacity",
+        "lblRoleCrew": "I'm a \"Crew Member\" that seeks for projects",
+        "lblRoleCustomer": "I'm a \"Customer\" that provides projects and searches for a project team",
+        "lblEMail": "E-Mail",
+        "msgCheckForm": "Your inputs are not complete - please check all mandatory fields!",
+        "msgFail400": "Account could not be created. Please choose a different E-Mail.",
+        "msgCreated": "Account was created. Please check your mails.."
+    },
+    "resetPassword": {
+        "lblInvalidToken": "The link you used is not valid (anymore). Please contact our support.",
+        "lblWelcomeAfterRegister": "Thank you for registering Eadrax! Please choose a password for your account:",
+        "lblPassword": "New password",
+        "lblPasswordConfirm": "Re-enter password",
+        "msgPasswordsDifferent": "The passwords are not equal!",
+        "msgPasswordChanged": "Password has been set successfully! You may login with the new password now.",
+        "btResetUser": "Reset password"
+    },
+    "forgotPassword": {
+        "lblIntroduction": "Please enter the E-Mail address associated to your Eadrax account and we will send you a password reset E-Mail.",
+        "lblOutro": "We have send an E-Mail to {0} with further instructions.",
+        "lblEMail": "E-Mail",
+        "msgCheckForm": "Your inputs are not correct - please check all fields!",
+        "btResetPassword": "Send E-Mail"
+    }
+}

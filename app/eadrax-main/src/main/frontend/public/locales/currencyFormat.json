@@ -1,0 +1,9 @@
+[{
+    "name": "Australian Dollar",
+    "code": "AUD",
+    "symbol": "$"
+}, {
+    "name": "United States Dollar",
+    "code": "USD",
+    "symbol": "$"
+}]
